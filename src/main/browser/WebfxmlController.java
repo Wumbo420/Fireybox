@@ -18,6 +18,13 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
 import java.util.ArrayList;
+import javafx.application.Platform;
+import javafx.collections.ObservableList;
+import javafx.scene.control.Tab;
+import javafx.scene.control.TabPane;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.web.WebHistory;
 
 
 /**
@@ -26,7 +33,6 @@ import java.util.ArrayList;
  * @author Brandon
  */
 public class WebfxmlController implements Initializable {
-
     @FXML
     private TextField txt;
     @FXML
@@ -37,6 +43,17 @@ public class WebfxmlController implements Initializable {
     private AnchorPane anc;
     @FXML
     private WebView webView;
+    @FXML
+    private TabPane tabPane;
+    @FXML
+    private Button addTab;
+    @FXML
+    private Button closeBtn;
+    @FXML
+    private Button sizeBtn;
+    @FXML
+    private Button minBtn;
+    
     private String toolbar;
     private String http;
     private String ww;
@@ -56,6 +73,12 @@ public class WebfxmlController implements Initializable {
         //arraylist for now make a text input stack later
         search = new ArrayList();
        
+        Image closed = new Image(getClass().getResourceAsStream("/main/resources/images/xit.png"));
+        closeBtn.setGraphic(new ImageView(closed));
+        closeBtn.setScaleX(.4);
+        closeBtn.setScaleY(.4);
+        closeBtn.maxHeight(10);
+        closeBtn.maxWidth(10);        
         //EventHandler for search and url input
         EventHandler<ActionEvent> enter = (ActionEvent event) -> {
             toolbar = txt.getText();
@@ -110,15 +133,23 @@ public class WebfxmlController implements Initializable {
             txt.setText(newValue);
             // System.out.println(oldValue);
             System.out.println(newValue);
-          
+           
         });
         
         //EventHandler for refresh button
         EventHandler<ActionEvent> reload = (ActionEvent event) -> {
          if(!search.isEmpty())
-           we.reload();
+           we.reload(); 
         };
          refresh.setOnAction(reload);         
+        //closes application 
+         closeBtn.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                Platform.exit();
+                }
+            });
+        
     }
     
     @FXML
