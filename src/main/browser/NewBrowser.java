@@ -25,13 +25,11 @@ public class NewBrowser extends Application {
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/main/resources/css/main.css");
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment()
-                .getDefaultScreenDevice();
+        .getDefaultScreenDevice();
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();
-        
+        //gets resolution info
         System.out.println("Resolution: " + height + ", " + width);
-        //replace if with switch statement
-        
         if(width < 720){
         Image fireIcon = new Image("/main/resources/icons/firebox_logo_32px.png");
         stage.getIcons().add(fireIcon);
@@ -57,14 +55,14 @@ public class NewBrowser extends Application {
         stage.getIcons().add(fireIcon);
         }
         stage.setMinHeight(height/2.5);
-        stage.setMinWidth(width/4);
-
-        stage.setTitle("Firebox");
+        stage.setMinWidth(width/3);
+        
+        stage.setTitle("Hotbox");
         stage.setScene(scene);
         stage.show();
         stage.setY((int)(height/7.87)-((int)height/(4.5533*4.5533)));
         stage.setX((int)(width/4.5533));
-       
+        
     }
     
     /**
