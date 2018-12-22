@@ -143,12 +143,9 @@ public class WebfxmlController implements Initializable {
         };
          refresh.setOnAction(reload);         
         //closes application 
-         closeBtn.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                Platform.exit();
-                }
-            });
+         closeBtn.setOnAction((ActionEvent actionEvent) -> {
+             Platform.exit();
+        });
         
     }
     
