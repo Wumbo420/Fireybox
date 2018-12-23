@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.web.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="anc" stylesheets="@main.css" 
+            prefHeight="560.0" prefWidth="784.0"
+            xmlns="http://javafx.com/javafx/8" 
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="main.browser.WebfxmlController">
+    <children>
+         <Button fx:id="closeBtn" stylesheets="@main.css" layoutX="790.0" layoutY="0.0" mnemonicParsing="false"  
+                onAction="#handle" AnchorPane.topAnchor="-10.0" AnchorPane.rightAnchor="-10.0" prefHeight="8.0" prefWidth="15.0">
+        </Button>  
+           <TabPane fx:id="tabPane"  stylesheets="@main.css"  prefWidth="220.0"  AnchorPane.topAnchor="5.0">
+    <tabs>
+        <Tab text="Firebox">
+            <content>
+               
+            </content>
+        </Tab>
+    </tabs>
+</TabPane>
+        <TextField fx:id="txt" layoutX="14.0" layoutY="10.0" 
+                   prefHeight="20.0" prefWidth="620.0" AnchorPane.topAnchor="35.0"
+                   AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0"/>
+        <Button fx:id="bt" layoutX="650.0" layoutY="10.0" mnemonicParsing="false"  
+                onAction="#handle" prefHeight="20.0" prefWidth="60.0" text="Search"
+                 AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="35.0">
+            <tooltip>
+                <Tooltip text="Search"/>
+            </tooltip>
+        </Button>  
+         <Button fx:id="refresh" layoutX="650.0" layoutY="10.0" mnemonicParsing="false"  
+                onAction="#handle" prefHeight="20.0" AnchorPane.topAnchor="35.0" prefWidth="60.0" text="Refresh"
+                AnchorPane.leftAnchor="15.0">
+            <tooltip>
+                <Tooltip text="Refresh"/>
+            </tooltip>
+        </Button>
+     
+        <WebView fx:id="webView" layoutX="0.0" layoutY="50.0" prefHeight="511.0"
+                 prefWidth="784.0" AnchorPane.bottomAnchor="0.0"
+                 AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                 AnchorPane.topAnchor="75.0" />
+    </children>
+</AnchorPane>
+
+

@@ -1,0 +1,80 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 25, 2018, 11:02:02 PM
+    Author     : Brandon
+*/
+.root{
+    -fx-font-size: 9pt;
+    -fx-font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    -fx-base: rgb(245, 245, 245);  
+    -fx-background:rgb(245, 245, 245)
+        linear-gradient(#fcfcfc 25%, #f3f3f3 65%); 
+}
+
+
+/* for all buttons */
+.button {
+    -fx-background-color: 
+        #b5b5b5,
+        linear-gradient(#fcfcfc, #f3f3f3),
+        linear-gradient(#f2f2f2 0%, #ebebeb 49%, #dddddd 50%, #cfcfcf 100%);
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-border-radius: 4px; 
+    -fx-text-fill: black;
+}
+
+.button:hover {
+    -fx-background-color: 
+        #424242,
+        linear-gradient(#fcfcfc, #f3f3f3),
+        linear-gradient(#f2f2f2 0%, #ebebeb 49%, #dddddd 50%, #cfcfcf 100%);
+    -fx-border-width: 1 1 1 1; 
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+}
+/* search bar */
+.text-field {
+    -fx-border-color: rgb(187, 187, 187);
+    -fx-border-width: 1 1 1 1; 
+    -fx-border-radius: 4px; 
+    -fx-background-color:  rgba(255,255,255,0.8);
+}
+
+.text-input:hover {
+    -fx-border-color: black;
+    -fx-border-width: 1 1 1 1; 
+    -fx-background-color: white;
+}
+
+.text-input:focused {
+    -fx-border-color: rgb(187, 187, 187);
+    -fx-border-width: 1 1 1 1; 
+    -fx-background-color: white;
+}
+/* search button tooltip */
+.tooltip{
+    -fx-font-family:"Arial";
+    -fx-text-fill: black;
+    -fx-font-size: 10pt; 
+    -fx-border-color: transparent;
+    -fx-background-color:  #424242,
+        linear-gradient(#fcfcfc 36%, #e6e6e6 66%);
+    -fx-border-bottom: 1px, dotted, white;
+    -fx-display: inline-block;
+    -fx-text-align: center;
+    -fx-background-insets: 0,1,2;
+    -fx-background-radius: 3,2,1;
+    -fx-padding: 2px;
+    -fx-z-index: 1;
+    -fx-bottom: 100%;
+    -fx-left: 50%;
+}
+
+.tabPane{
+-fx-background-color: transparent;
+}
