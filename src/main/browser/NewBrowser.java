@@ -7,9 +7,12 @@ package main.browser;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
@@ -22,11 +25,15 @@ import javafx.stage.StageStyle;
  * @author Brandon
  */
 public class NewBrowser extends Application {
+    @FXML
+    private Button minBtn;
     private double xOffset = 0;
     private double yOffset = 0;
     
     @Override
     public void start(Stage stage) throws Exception {    
+   
+        
         Parent root = FXMLLoader.load(getClass().getResource("webfxml.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add("/main/resources/css/main.css");
@@ -36,7 +43,7 @@ public class NewBrowser extends Application {
         int width = gd.getDisplayMode().getWidth();
         int height = gd.getDisplayMode().getHeight();
         
-        System.out.println("Resolution: " + height + ", " + width);
+        System.out.println("Resolution: " + width + ", " + height);
         if(width < 720){
          Image fireIcon = new Image("/main/resources/icons/firebox_logo_32px.png");
         stage.getIcons().add(fireIcon);
@@ -90,17 +97,15 @@ public class NewBrowser extends Application {
         stage.setY((int)(height/7.87)-((int)height/(4.5533*4.5533)));
         stage.setX((int)(width/4.5533));     
         WindowStyle.allowDrag(root, stage);
-        WindowStyle.stageDimension(stage.getWidth(), stage.getHeight());
-        System.out.println("MaxWidth " + width + " X MaxHeight " + height);
-        
+        WindowStyle.stageDimension(stage.getWidth(), stage.getHeight());        
     }
     
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        
         System.setProperty("sun.net.http.allowRestrictedHeaders", "true");
         launch(args); 
     }
-
 }

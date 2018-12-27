@@ -20,7 +20,7 @@ public class WindowStyle extends NewBrowser{
             .getVisualBounds();
     private static double[] pref_WH, offset_XY;
     private static String styleSheet;
-
+    public static boolean full = false;
 
     private WindowStyle(String css) {
         styleSheet= getClass().getResource(css).toString();
@@ -36,15 +36,21 @@ public class WindowStyle extends NewBrowser{
             if (d.getScreenY()<(SCREEN_BOUNDS.getMaxY()-20))
                 stage.setY(d.getScreenY() - offset_XY[1]);
                 stage.setX(d.getScreenX() - offset_XY[0]);
+                stage.setFullScreen(false);
         });
 
         root.setOnMouseReleased((MouseEvent r)-> {
             //Ensures the stage is not dragged past top of screen
+            
             if (stage.getY()<0.0) stage.setY(0.0);
-            if(r.getClickCount()%2 == 0){
+            if(r.getClickCount()%2 == 0 && full == false){
                 stage.setFullScreen(true);
                 stage.setX(0);
-                stage.setY(0);   
+                stage.setY(0);
+                full = true;
+            } else if (r.getClickCount()%2 == 0 && full == true){
+                stage.setFullScreen(false);
+                full = false;
             }
             
         });
