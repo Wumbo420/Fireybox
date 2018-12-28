@@ -52,7 +52,7 @@ public class WebfxmlController implements Initializable {
     private String http;
     private String ww;
     private ArrayList search;
-    
+    private ArrayList history;
 
     /**
      * Initializes the controller class.
@@ -66,8 +66,7 @@ public class WebfxmlController implements Initializable {
         we.setJavaScriptEnabled(true);
         //arraylist for now make a text input stack later
         search = new ArrayList();
-        toolbar = txt.getText();
-        http = toolbar.substring(0, toolbar.length());
+        
         Image closed = new Image(getClass().getResourceAsStream("/main/resources/images/xit.png"));
         closeBtn.setGraphic(new ImageView(closed));
         closeBtn.setScaleX(.4);
@@ -76,6 +75,8 @@ public class WebfxmlController implements Initializable {
         closeBtn.maxWidth(10);        
         //EventHandler for search and url input
         EventHandler<ActionEvent> enter = (ActionEvent event) -> {
+        toolbar = txt.getText();
+        http = toolbar.substring(0, toolbar.length());
             search.add(0, http);
             //search all sites to be opened directly by domain
             if (toolbar.length() > 2) { 
@@ -126,7 +127,6 @@ public class WebfxmlController implements Initializable {
             txt.setText(newValue);
             // System.out.println(oldValue);
             System.out.println(newValue);
-            search.add(newValue);       
         });
         
         //EventHandler for refresh button
