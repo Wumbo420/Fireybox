@@ -7,6 +7,15 @@ and open the template in the editor.
     Created on : Oct 25, 2018, 11:02:02 PM
     Author     : Brandon
 */
+.AnchorPane{
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.tab-pane{
+    -fx-cursor: move;
+}
+
+
 .root{
     -fx-font-size: 9pt;
     -fx-font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif;

@@ -64,6 +64,7 @@ public class WebfxmlController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
         WebEngine we = webView.getEngine();
         we.setJavaScriptEnabled(true);
+        we.load( "https://firebox.netlify.com/");
         //arraylist for now make a text input stack later
         search = new ArrayList();
         
@@ -124,6 +125,7 @@ public class WebfxmlController implements Initializable {
         bt.setOnAction(enter);
         //listener for search button
         we.locationProperty().addListener((ObservableValue<? extends String> observable, String oldValue, String newValue) -> {
+        we.setJavaScriptEnabled(false);
             txt.setText(newValue);
             // System.out.println(oldValue);
             System.out.println(newValue);
@@ -131,6 +133,7 @@ public class WebfxmlController implements Initializable {
         
         //EventHandler for refresh button
         EventHandler<ActionEvent> reload = (ActionEvent event) -> {
+        we.setJavaScriptEnabled(false);
          if(!search.isEmpty())
            we.reload();
            

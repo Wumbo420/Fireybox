@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - NewBrowser",
+            "request": "launch",
+            "mainClass": "main.browser.NewBrowser",
+            "projectName": "Firebox"
+        }
+    ]
+}
