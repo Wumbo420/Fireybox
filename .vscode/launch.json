@@ -2,7 +2,7 @@
     "configurations": [
         {
             "type": "java",
-            "name": "CodeLens (Launch) - NewBrowser",
+            "name": "Firebox",
             "request": "launch",
             "mainClass": "main.browser.NewBrowser",
             "projectName": "Firebox"

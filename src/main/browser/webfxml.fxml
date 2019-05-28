@@ -16,15 +16,15 @@
          <Button fx:id="closeBtn" stylesheets="@main.css" layoutX="790.0" layoutY="0.0" mnemonicParsing="false"  
                 onAction="#handle" AnchorPane.topAnchor="-10.0" AnchorPane.rightAnchor="-10.0" prefHeight="8.0" prefWidth="15.0">
         </Button>  
-           <TabPane fx:id="tabPane"  stylesheets="@main.css"  AnchorPane.topAnchor="0.0">
-    <tabs>
-        <Tab text=" Firebox " >
-            <content>
-               
-            </content>
-        </Tab>
-    </tabs>
-</TabPane>
+        <TabPane fx:id="tabPane"  stylesheets="@main.css"  AnchorPane.topAnchor="0.0">
+            <tabs>
+                <Tab text=" resize">
+                    <content>
+
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
         <TextField fx:id="txt" layoutX="14.0" layoutY="10.0" 
                    prefHeight="20.0" prefWidth="620.0" AnchorPane.topAnchor="35.0"
                    AnchorPane.leftAnchor="90.0" AnchorPane.rightAnchor="90.0"/>

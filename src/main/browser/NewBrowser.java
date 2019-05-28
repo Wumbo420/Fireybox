@@ -7,16 +7,12 @@ package main.browser;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import javafx.application.Application;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ToolBar;
 import javafx.scene.image.Image;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -28,14 +24,15 @@ public class NewBrowser extends Application {
     @FXML
     private Button minBtn;
     private double xOffset = 0;
-    private double yOffset = 0;
+    //private double yOffset = 0;
     
     @Override
     public void start(Stage stage) throws Exception {    
    
-        
+  
         Parent root = FXMLLoader.load(getClass().getResource("webfxml.fxml"));
         Scene scene = new Scene(root);
+        
         scene.getStylesheets().add("/main/resources/css/main.css");
         GraphicsDevice gd = GraphicsEnvironment.getLocalGraphicsEnvironment()
         .getDefaultScreenDevice();
@@ -69,35 +66,18 @@ public class NewBrowser extends Application {
         stage.getIcons().add(fireIcon);
         }
         stage.setMinHeight(height/2.5);
-        stage.setMinWidth(width/3);
+        stage.setMinWidth(width/3);        
         stage.initStyle(StageStyle.UNDECORATED);
         
+        
         //moveable scene
-        root.setOnMousePressed((MouseEvent event) -> {
-            xOffset = event.getSceneX();
-            yOffset = event.getSceneY();
-        });
-        root.setOnMouseDragged((MouseEvent event) -> {
-            stage.setX(event.getScreenX() - xOffset);
-            stage.setY(event.getScreenY() - yOffset);
-        });
-        BorderPane borderPane = new BorderPane();
-        borderPane.setStyle("-fx-background-color: white;");
-        ToolBar toolBar = new ToolBar();
 
-        int tHeight = 25;
-        toolBar.setPrefHeight(tHeight);
-        toolBar.setMinHeight(tHeight);
-        toolBar.setMaxHeight(tHeight);
-
-        borderPane.setTop(toolBar);
         stage.setTitle("Fireybox");
         stage.setScene(scene);
-        stage.show();
-        stage.setY((int)(height/7.87)-((int)height/(4.5533*4.5533)));
-        stage.setX((int)(width/4.5533));     
-        WindowStyle.allowDrag(root, stage);
-        WindowStyle.stageDimension(stage.getWidth(), stage.getHeight());        
+        stage.show();  
+        WindowStyle.stageDimension(xOffset, xOffset);
+        ResizeHelper.addResizeListener(stage);        
+       
     }
     
     /**

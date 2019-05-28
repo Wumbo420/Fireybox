@@ -11,10 +11,6 @@ and open the template in the editor.
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
-.tab-pane{
-    -fx-cursor: move;
-}
-
 
 .root{
     -fx-font-size: 9pt;
@@ -94,7 +90,7 @@ and open the template in the editor.
     -fx-border-color: rgb(150, 150, 150);
     -fx-background-radius: 0;
     -fx-background-insets: 1;
-    -fx-border-width: 0 0 1 0   
+    -fx-border-width: 0 0 1 0  
 }
 
 .tab:selected
